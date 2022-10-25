@@ -1,6 +1,20 @@
 <template>
-  <div>
-    <h3>Hi hello</h3>
-    <el-button type="primary">I am ElButton</el-button>
+  <div class="header">
+    <h1>Nithin@Appy</h1>
+    <p>My supercool Projects</p>
   </div>
 </template>
+<script lang="ts" setup>
+const currentDate = ref(new Date());
+</script>
+
+<style>
+/* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #00c695;
+  color: white;
+  font-size: 30px;
+}
+</style>
