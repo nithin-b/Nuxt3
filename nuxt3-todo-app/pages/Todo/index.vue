@@ -1,5 +1,6 @@
 <template>
   <div>
+    <AddTodo />
     <MyTodos />
   </div>
 </template>

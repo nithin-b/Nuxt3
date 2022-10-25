@@ -1,22 +1,28 @@
 <template>
   <div>
-    <h3>Todos</h3>
+    <h3 style="text-align: center">MyTodos</h3>
     <div class="legend">
-      <span>Double click to mark as complete</span>
       <span> <span class="incomplete-box"></span> = Incomplete </span>
       <span> <span class="complete-box"></span> = Complete </span>
     </div>
     <div class="todos">
       <div
-        @dblclick="onDblClick(todo)"
         v-for="todo in todoStore.todos"
         :key="todo"
         class="todo"
         v-bind:class="{ 'is-complete': todo.completed }"
+        @click="updateTodo(todo)"
       >
         {{ todo.title }}
-        <span> ........</span>
-        <el-button @click="deleteTodo(todo.id)" type="danger">Delete</el-button>
+        <br />
+        <div>........</div>
+        <div>
+          <button @click="deleteTodo(todo.id)" class="danger">Delete</button>
+          <button @click="updateTodo(todo)">
+            <div v-if="todo.completed">Mark As InComplete</div>
+            <div v-else>Mark As Complete</div>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -30,6 +36,14 @@ await useAsyncData(async () => {
 });
 const deleteTodo = async (id) => {
   todoStore.deleteTodo(id);
+};
+const updateTodo = async (todo: any) => {
+  const updateTodo = {
+    id: todo.id,
+    completed: !todo.completed,
+  };
+
+  await todoStore.updateTodo(updateTodo);
 };
 </script>
 
