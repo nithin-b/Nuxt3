@@ -15,7 +15,7 @@ const todosStore = useTodoStore();
 const title = ref("");
 const onSubmit = () => {
   todosStore.addTodo(title.value);
-  this.title = " ";
+  this.title = ref("");
 };
 </script>
 <style scoped>

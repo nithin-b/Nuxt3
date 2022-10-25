@@ -2,6 +2,7 @@
   <div>
     <h3 style="text-align: center">MyTodos</h3>
     <div class="legend">
+      <span>Double click to mark as complete</span>
       <span> <span class="incomplete-box"></span> = Incomplete </span>
       <span> <span class="complete-box"></span> = Complete </span>
     </div>
@@ -60,13 +61,6 @@ const onDblClick = async (todo: any) => {
   border-radius: 5px;
   text-align: center;
   position: relative;
-  cursor: pointer;
-}
-i {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: #fff;
   cursor: pointer;
 }
 .legend {
