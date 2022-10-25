@@ -8,6 +8,6 @@
 </template>
 <style>
 .main-div {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(255, 255, 255);
 }
 </style>
