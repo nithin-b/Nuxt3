@@ -7,21 +7,21 @@
     </div>
     <div class="todos">
       <div
+        @dblclick="onDblClick(todo)"
         v-for="todo in todoStore.todos"
-        :key="todo"
+        :key="todo.id"
         class="todo"
         v-bind:class="{ 'is-complete': todo.completed }"
-        @click="updateTodo(todo)"
       >
         {{ todo.title }}
         <br />
         <div>........</div>
         <div>
           <button @click="deleteTodo(todo.id)" class="danger">Delete</button>
-          <button @click="updateTodo(todo)">
-            <div v-if="todo.completed">Mark As InComplete</div>
-            <div v-else>Mark As Complete</div>
-          </button>
+          <!-- <button @click="updateTodo(todo)">
+            <div v-if="todo.completed">Mark As Complete</div>
+            <div v-else>Mark As InComplete</div>
+          </button> -->
         </div>
       </div>
     </div>
@@ -37,12 +37,12 @@ await useAsyncData(async () => {
 const deleteTodo = async (id) => {
   todoStore.deleteTodo(id);
 };
-const updateTodo = async (todo: any) => {
+const onDblClick = async (todo: any) => {
   const updateTodo = {
     id: todo.id,
+    title: todo.title,
     completed: !todo.completed,
   };
-
   await todoStore.updateTodo(updateTodo);
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="add">
     <h3>Add Todo</h3>
-    <div class="add">
+    <div>
       <form @submit.prevent="onSubmit">
         <input type="text" v-model="title" placeholder="Add Todo..." />
         <input type="submit" value="Submit" />
@@ -15,10 +15,14 @@ const todosStore = useTodoStore();
 const title = ref("");
 const onSubmit = () => {
   todosStore.addTodo(title.value);
-  this.title = "";
+  this.title = " ";
 };
 </script>
 <style scoped>
+.add {
+  padding: 20px;
+  margin-top: 5%;
+}
 form {
   display: flex;
 }

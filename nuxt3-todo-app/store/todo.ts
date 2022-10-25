@@ -23,17 +23,22 @@ export const useTodoStore = defineStore("todo", {
                 }
             })
             this.todos.unshift(res);
+            
         },
-        async updateTodo(updateTodo: Todo) {
-            const response = await $fetch<Todo>(
+         async updateTodo(updateTodo:any) {
+                        const response = await $fetch<Todo> (
                 `https://jsonplaceholder.typicode.com/todos/${updateTodo.id}`,
                 {
-                    method: "PUT",
-                    body: {
-                        completed:updateTodo.completed
+                    method: "PUT", body: {
+                    title:updateTodo.title,
+                    completed:updateTodo.completed
                     }
                 }
-            )
-        }
+                 )       
+    var index = this.todos.findIndex((todo: { id: any; }) => todo.id === updateTodo.id) 
+    if(index !== -1){
+      this.todos.splice(index,1,updateTodo)
+    }
+   },
     }
 })
