@@ -2,6 +2,7 @@
   <div class="header">
     <h1>Nithin@Appy</h1>
     <p>My supercool Projects</p>
+    <nuxt-link to="/Todo/">My Todo</nuxt-link>
   </div>
 </template>
 <script lang="ts" setup>

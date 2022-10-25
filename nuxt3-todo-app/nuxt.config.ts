@@ -10,7 +10,16 @@ export default defineNuxtConfig({
                 { name: 'description', content: 'My amazing site.' }
             ],
         }
-    },
+    },modules: [
+      "@vueuse/nuxt",
+      [
+         "@pinia/nuxt",
+         {
+            autoImports: ["defineStore", ["defineStore", "definePiniaStore"]],
+         },
+      ],
+   ],
+
     vite: {
         css: {
             preprocessorOptions: {

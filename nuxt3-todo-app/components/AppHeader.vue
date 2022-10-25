@@ -1,10 +1,5 @@
 <template>
-  <el-menu
-    :default-active="activeIndex"
-    class="el-menu-demo"
-    mode="horizontal"
-    :ellipsis="false"
-  >
+  <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false">
     <el-menu-item><NuxtLink to="/">LOGO</NuxtLink></el-menu-item>
     <div class="flex-grow" />
     <el-menu-item><NuxtLink to="/about">About page</NuxtLink></el-menu-item>
