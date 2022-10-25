@@ -1,5 +1,6 @@
 <template>
   <div>
-    <h3>hi hello</h3>
+    <h3>Hi hello</h3>
+    <el-button type="primary">I am ElButton</el-button>
   </div>
 </template>
