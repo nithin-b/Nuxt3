@@ -8,7 +8,10 @@
     <div class="todos">
       <div v-for="module in module.modules" :key="module.id" class="todo">
         <h3 class="sub-head">{{ module.name }}</h3>
-        <nuxt-link :to="{ path: '/' + module.path, query: module.query }"
+        <br />
+        <nuxt-link
+          :to="{ path: '/' + module.path, query: module.query }"
+          class="link"
           >View Module</nuxt-link
         >
       </div>
@@ -33,6 +36,13 @@ const module = useModuleStore();
 .sub-head {
   color: #14213d;
 }
+.link {
+  text-decoration: none;
+  background-color: #14213d;
+  color: whitesmoke;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
 .todos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -40,11 +50,10 @@ const module = useModuleStore();
 }
 .todo {
   border: 1px solid #ccc;
-  background: #e5e5e5;
+  background: #ffffff;
   padding: 1rem;
   border-radius: 5px;
   text-align: center;
   position: relative;
-  cursor: pointer;
 }
 </style>

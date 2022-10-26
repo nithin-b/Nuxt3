@@ -32,7 +32,7 @@
 import { useTodoStore } from "@/store/todo";
 const todoStore = useTodoStore();
 // console.log(todo);
-await useAsyncData(async () => {
+useAsyncData(async () => {
   await todoStore.getTodos();
 });
 const deleteTodo = async (id) => {
